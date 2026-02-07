@@ -1,0 +1,21 @@
+:root {
+    --bg-color: #f7f3e8; /* Soft paper-like background */
+    --font-primary: 'Inter', system-ui, sans-serif;
+    --font-hand: 'Comic Sans MS', 'Chalkboard SE', sans-serif; /* Fallback for sticky note feel */
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-primary);
+    background-color: var(--bg-color);
+    color: #333;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+}
+
+button {
+    font-family: inherit;
+}
