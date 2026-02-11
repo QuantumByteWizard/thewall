@@ -2,6 +2,8 @@ export interface Post {
     id: number;
     content: string;
     timestamp: string;
+    username: string;
+    reactions: number;
     color: string;
     rotation: number;
 }
@@ -27,6 +29,16 @@ export async function createPost(content: string, color: string = '#ffffff'): Pr
     });
     if (!response.ok) {
         throw new Error('Failed to create post');
+    }
+    return response.json();
+}
+
+export async function reactToPost(id: number): Promise<{ reactions: number }> {
+    const response = await fetch(`${API_URL}/posts/${id}/react`, {
+        method: 'POST',
+    });
+    if (!response.ok) {
+        throw new Error('Failed to react to post');
     }
     return response.json();
 }

@@ -11,6 +11,8 @@ class PostCreate(PostBase):
 
 class Post(PostBase):
     id: int
+    username: str
+    reactions: int = 0
     timestamp: datetime
 
     class Config:
